@@ -1,0 +1,20 @@
+.container {
+    width: 500px;
+    height: 200px;
+    background: blue;
+    margin: 10px auto; /*水平居中*/
+    padding: 10px;
+}
+.left {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background:lightgreen;
+}
+.right {
+    overflow: auto;
+    background: red;
+    height: 100px;
+    margin-left: 110px;
+    width: 100px;
+}

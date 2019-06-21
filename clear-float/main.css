@@ -1,0 +1,14 @@
+.container{
+    width: 50%;
+    margin: 10px auto;
+    border: 1px solid #000;
+    /*clear float*/
+    overflow: hidden;
+}
+
+.inner-box {
+    width: 100px;
+    height: 100px;
+    background: #eee;
+    float: left;
+}
