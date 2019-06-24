@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rick Text Input</title>
+    <style>
+        #app {
+            margin: 50px auto;
+            width: 1000px;
+        }
+      
+        .editor {
+            width: 500px;
+            height: 200px;
+            border-radius: 4px;
+            background: #fff;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            overflow: scroll;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            padding: 5px;
+            outline: none;
+        }
+
+        .operation {
+            margin: 5px;
+            display: flex;
+            width: 500px;
+            justify-content: space-around;
+
+        }
+
+        img {
+            max-width: 300px;
+            max-height: 300px;
+            vertical-align: middle;
+        }
+      
+        .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            position: absolute;
+            overflow: hidden;
+            opacity: 0;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- emojis start  -->
+        <div class="emoji"> 
+            <div class="emoji-list">
+                <section v-for="(key, keyIndex) in Object.keys(emoji)" :key="keyIndex">
+                    <span class="emoji-list-item" v-for="(item, index) in emoji[key]" :key="index" @click="insertEmoji(item)"> 
+                        {{item}}
+                    </span>  
+                </section>
+            </div>
+        </div>
+        <!-- emojis end -->
+        <!-- editor starts -->
+        <div class="editor" 
+            contenteditable="true" 
+            ref="editor"
+            @keyup="getCursor"
+            @keydown.enter.prevent="submit"
+            @paste.prevent="onPaste"
+            @click="getCursor">
+        </div>
+        <!-- editor ends -->
+        <div class="operation">
+            <button @click="bold">加粗</button>
+            <button @click="formatBlock">段落</button>
+            <button @click="insertLink">链接</button>
+            <button class="op_img"> 
+                <label>
+                    <span>图片</span>
+                    <input type="file" class="inputfile" accept="image/*" @change="insertImg">
+                </label> 
+            </button>
+        
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="module" src="./app.js"></script> 
+</body>
+</html>
