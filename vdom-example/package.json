@@ -12,6 +12,6 @@
   },
   "scripts": {
     "build": "webpack --mode=development",
-    "dev": "webpack-dev-server --mode=development --contentBase=./dist"
+    "dev": "webpack server --mode=development --content-base=./dist"
   }
 }
