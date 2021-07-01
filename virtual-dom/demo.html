@@ -30,7 +30,7 @@
 
     console.log('h函数返回虚拟dom为',vnode);
 
-        //定义 patch
+    //定义 patch
     let patch = snabbdom.init([
         snabbdom_class,
         snabbdom_props,
@@ -47,7 +47,7 @@
     let btn = document.getElementById('btn-change');
 
     // newVnode 更改
-    document.addEventListener('click',function (params) {
+    btn.addEventListener('click',function (params) {
         let newVnode = h('ul#list',{},[
             h('li.item',{},'itemC'),
             h('li.item',{},'itemB'),
