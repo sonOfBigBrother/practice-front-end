@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibling Combinator Demo</title>
+    <style>
+        /* li元素所有兄弟元素li字体为红色 */
+        li ~ li {
+            color: red;
+        }
+        /* li元素下一个兄弟元素字体为蓝色 */
+        li + li {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>One</li>
+        <ul>
+            <li>One-1</li>
+            <!-- 字体为蓝色 li+li覆盖li~li -->
+            <li>One-2</li>
+        </ul>
+        <!-- 字体为红色 -->
+        <li>Two!</li> 
+        <!-- 字体为蓝色 li+li覆盖li~li -->
+        <li>Three</li> 
+      </ul>
+</body>
+</html>
