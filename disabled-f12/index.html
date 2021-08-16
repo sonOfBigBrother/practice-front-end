@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>测试禁用F12</title>
+  </head>
+  <body>
+    <h1>测试禁用F12及复制</h1>
+    <script>
+      // 禁用f12及复制
+      document.onselectstart = function () {
+        return false;
+      };
+      window.oncontextmenu = function () {
+        return false;
+      };
+      window.onkeydown =
+        window.onkeyup =
+        window.onkeypress =
+          function (event) {
+            if (event.code == "F12") {
+              window.event.returnValue = false;
+              return false;
+            }
+          };
+    </script>
+  </body>
+</html>
